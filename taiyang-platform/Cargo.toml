@@ -1,0 +1,10 @@
+[package]
+name = "taiyang-platform"
+description = "太阳平台层: 目录约定/协议类型, TSF与Server两边共用"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"

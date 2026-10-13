@@ -1,0 +1,9 @@
+[package]
+name = "taiyang-server"
+description = "太阳输入法 Server: 引擎所在进程 (M2: 吃 a-z 打印到控制台, 其余放行)"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+taiyang-platform = { path = "../taiyang-platform" }
+myinput-core = { path = "../myinput-core" }

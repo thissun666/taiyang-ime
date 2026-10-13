@@ -1,0 +1,31 @@
+[package]
+name = "taiyang-tsf"
+description = "太阳输入法 TSF 文本服务 DLL: 加载进每个应用进程 (M1: 注册+空按键骨架, 按键全放行)"
+version = "0.1.0"
+edition = "2024"
+
+# cdylib 产物 taiyang_tsf.dll (regsvr32 认); rlib 给后续端到端测试。
+[lib]
+name = "taiyang_tsf"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+taiyang-platform = { path = "../taiyang-platform" }
+thiserror = "2.0.20"
+
+[target."cfg(windows)".dependencies]
+# #[implement] 宏展开引用 ::windows_core, 要直接依赖 (抄青简)
+windows-core = "0.62.2"
+windows-registry = "0.6.1"
+windows = { version = "0.62.2", features = [
+    "Win32_Foundation",
+    "Win32_Graphics_Gdi",
+    "Win32_System_Com",
+    "Win32_System_LibraryLoader",
+    "Win32_System_SystemServices",
+    "Win32_System_Threading",
+    "Win32_UI_Input_KeyboardAndMouse",
+    "Win32_UI_TextServices",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_UI_HiDpi",
+] }

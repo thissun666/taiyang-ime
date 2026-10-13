@@ -1,0 +1,13 @@
+# Rust
+/target/
+
+# 构建与部署产物
+*.pdb
+*.dll.bak-*
+
+# 运行日志不入库
+*.log
+
+# 系统
+Thumbs.db
+.DS_Store

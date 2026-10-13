@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "taiyang-platform",
+    "taiyang-tsf",
+    "taiyang-server","myinput-core", "taiyang-typer"]
+resolver = "3"
