@@ -940,7 +940,7 @@ fn no_server_fallback() -> (KeyOutcome, Option<String>, Option<String>, Vec<Cand
     if now.saturating_sub(SPAWN_AT.load(std::sync::atomic::Ordering::SeqCst)) > 10_000 {
         SPAWN_AT.store(now, std::sync::atomic::Ordering::SeqCst);
         let exe = std::env::var("TAIYANG_SERVER").ok().map(std::path::PathBuf::from)
-            .or_else(|| Some(std::path::PathBuf::from(r"E:\GitHubtwo\myinput\rust\target\release\taiyang-server.exe")))
+            .or_else(|| Some(std::path::PathBuf::from(r"<repo-root>\target\release\taiyang-server.exe")))
             .filter(|p| p.exists());
         if let Some(exe) = exe {
             use std::os::windows::process::CommandExt;
